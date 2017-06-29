@@ -18,7 +18,17 @@
 
   <div class="field form-group">
     <%= form.label :city %>
-    <%= form.text_field :city, id: :location_city, class: 'form-control' %>
+    <%= form.collection_select :city, Location::MARTA_CITIES, :to_s, :to_s, class: 'form-control' %>
+  </div>
+
+
+  <div class="field form-group text-center">
+    <% form_tag do %>
+    <p> <%= radio_button_tag :max,  "1" %> 1/4 mi </p>
+    <p> <%= radio_button_tag :max, "2" %> 1/2 mi </p>
+    <p> <%= radio_button_tag :max, "3" %> 1 mi </p>
+    <p> <%= submit_tag 'Choice' %> </p>
+  <% end %> 
   </div>
 
 
@@ -26,4 +36,6 @@
   <div class="actions form-group">
     <%= form.submit 'Find my buses', class: 'btn btn-success'%>
   </div>
+
+
 <% end %>

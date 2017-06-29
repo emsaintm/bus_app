@@ -11,6 +11,7 @@
 <h3>The closest buses are...</h3>
 <% @buses.each do |bus| %>
   <p>
+    <strong><%= bus.inpsect %></strong>
     <strong>Route: </strong><%= bus["ROUTE"] %> <%= bus["DIRECTION"] %>
     <strong>Bus Number: </strong><%= bus["VEHICLE"] %> <br>
     <strong>Next Stop: </strong><%= bus["TIMEPOINT"] %>
