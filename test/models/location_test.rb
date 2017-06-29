@@ -17,4 +17,5 @@ end
 #  longitude      :float
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  max            :float
 #

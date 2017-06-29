@@ -21,9 +21,8 @@ class LocationsController < ApplicationController
     # only keep the buses that are close to our user
 
     @buses.select! do |bus|
-      is_nearby?(@location.latitude, @location.longitude, bus["LATITUDE"], bus["LONGITUDE"])
+      is_nearby?(@location.latitude, @location.longitude, bus["LATITUDE"], bus["LONGITUDE"], @location.max)
     # select! goes through each and returns an array with true ones-- buses that are within range
-
 
     end
   end
@@ -85,6 +84,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:street_address, :city, :latitude, :longitude)
+      params.require(:location).permit(:street_address, :city, :latitude, :longitude, :max)
     end
 end
