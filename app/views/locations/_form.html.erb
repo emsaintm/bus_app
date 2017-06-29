@@ -21,17 +21,12 @@
     <%= form.collection_select :city, Location::MARTA_CITIES, :to_s, :to_s, class: 'form-control' %>
   </div>
 
-
-  <div class="field form-group text-center">
-    <% form_tag do %>
-    <p> <%= radio_button_tag :max,  "1" %> 1/4 mi </p>
-    <p> <%= radio_button_tag :max, "2" %> 1/2 mi </p>
-    <p> <%= radio_button_tag :max, "3" %> 1 mi </p>
-    <p> <%= submit_tag 'Choice' %> </p>
-  <% end %> 
+  <div class="form_row">
+    <label for="max">max:</label>
+      <%= form.radio_button :max, 0.005 %> 1/4 mi
+      <%= form.radio_button :max, 0.01 %> 1/2 mi
+      <%= form.radio_button :max, 0.02 %> 1 mi
   </div>
-
-
 
   <div class="actions form-group">
     <%= form.submit 'Find my buses', class: 'btn btn-success'%>

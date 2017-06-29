@@ -47,6 +47,10 @@ gem 'annotate'
 gem 'stamp'
 
 
+# ** It's a secret! **
+
+gem 'figaro'
+
 
 
 group :development, :test do
